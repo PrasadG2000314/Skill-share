@@ -10,6 +10,7 @@ import { AuthContext } from '../contexts/AuthContext';
 import { postApi } from '../services/api';
 import { useMutation, useQueryClient } from 'react-query';
 
+//CreatePostForm funcction
 export default function CreatePostForm() {
   const { currentUser } = useContext(AuthContext);
   const [content, setContent] = useState('');
