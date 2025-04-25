@@ -66,6 +66,7 @@ export default function CommentSection({ postId }) {
     }
   );
 
+  // Mutation to update a comment
   const updateCommentMutation = useMutation(
     ({ commentId, commentData }) => commentApi.updateComment(commentId, commentData),
     {
