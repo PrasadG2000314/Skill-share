@@ -35,7 +35,7 @@ export default function PostPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const queryClient = useQueryClient();
-
+// Check if comments section should be focused
   // Check if comments section should be focused
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
