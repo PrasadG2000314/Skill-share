@@ -139,6 +139,7 @@ export default function CommentSection({ postId }) {
     setSelectedComment(comment);
   };
 
+  // Close options menu
   const handleMenuClose = () => {
     setMenuAnchorEl(null);
     setSelectedComment(null);
