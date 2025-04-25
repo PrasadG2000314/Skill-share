@@ -84,6 +84,7 @@ export default function CommentSection({ postId }) {
     }
   );
 
+  // Mutation to delete a comment
   const deleteCommentMutation = useMutation(
     (commentId) => commentApi.deleteComment(commentId),
     {
