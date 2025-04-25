@@ -152,6 +152,7 @@ export default function CommentSection({ postId }) {
     handleMenuClose();
   };
 
+  // Cancel comment editing
   const cancelEditComment = () => {
     setEditingComment(null);
     setEditText('');
