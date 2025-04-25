@@ -126,6 +126,7 @@ export default function CommentSection({ postId }) {
     }
   };
 
+  // Delete selected comment
   const handleDeleteComment = () => {
     if (selectedComment) {
       deleteCommentMutation.mutate(selectedComment.id);
