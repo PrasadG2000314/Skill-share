@@ -133,6 +133,7 @@ export default function CommentSection({ postId }) {
     }
   };
 
+   // Open options menu for comment (edit/delete)
   const handleMenuOpen = (event, comment) => {
     setMenuAnchorEl(event.currentTarget);
     setSelectedComment(comment);
