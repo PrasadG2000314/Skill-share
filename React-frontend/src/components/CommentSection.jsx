@@ -12,6 +12,7 @@ import { AuthContext } from '../contexts/AuthContext';
 import { commentApi, postApi } from '../services/api';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { getFullImageUrl } from '../utils/imageUtils';
+// Main Comment Section component
 export default function CommentSection({ postId }) {
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
