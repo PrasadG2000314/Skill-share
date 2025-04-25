@@ -107,6 +107,7 @@ export default function CommentSection({ postId }) {
     }
   );
 
+  // Submit a new comment
   const handleSubmitComment = (e) => {
     e.preventDefault();
     if (commentText.trim()) {
