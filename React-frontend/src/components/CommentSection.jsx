@@ -158,14 +158,17 @@ export default function CommentSection({ postId }) {
     setEditText('');
   };
 
+  // Close error alert
   const handleCloseError = () => {
     setShowError(false);
   };
 
+  // Close success alert
   const handleCloseSuccess = () => {
     setShowSuccess(false);
   };
 
+  // Navigate to user profile
   const handleUserProfileClick = (userId) => {
     navigate(`/profile/${userId}`);
   };
