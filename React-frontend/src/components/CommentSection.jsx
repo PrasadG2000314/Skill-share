@@ -116,6 +116,7 @@ export default function CommentSection({ postId }) {
     }
   };
 
+  // Submit edited comment
   const handleUpdateComment = () => {
     if (editText.trim()) {
       updateCommentMutation.mutate({
