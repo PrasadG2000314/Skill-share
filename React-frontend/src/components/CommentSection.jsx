@@ -26,6 +26,7 @@ export default function CommentSection({ postId }) {
   const [successMessage, setSuccessMessage] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
   const queryClient = useQueryClient();
+  // Fetch all comments related to the post
   const { data, isLoading, isError } = useQuery(
     ['comments', postId],
     () => postApi.getComments(postId),
