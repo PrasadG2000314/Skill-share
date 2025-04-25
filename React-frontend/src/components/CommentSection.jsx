@@ -145,6 +145,7 @@ export default function CommentSection({ postId }) {
     setSelectedComment(null);
   };
 
+  // Start editing a comment
   const startEditComment = (comment) => {
     setEditingComment(comment);
     setEditText(comment.content);
