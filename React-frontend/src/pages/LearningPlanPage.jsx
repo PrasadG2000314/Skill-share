@@ -453,4 +453,5 @@ export default function LearningPlanPage() {
       </Dialog>
     </Container>
   );
-}
+}// LearningPlanPage.jsx
+// This component is responsible for displaying a learning plan, including its title, description, skills, and steps.
