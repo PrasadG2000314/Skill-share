@@ -12,6 +12,7 @@ import { AuthContext } from '../contexts/AuthContext';
 import { commentApi, postApi } from '../services/api';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { getFullImageUrl } from '../utils/imageUtils';
+// Main Comment Section component
 export default function CommentSection({ postId }) {
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ export default function CommentSection({ postId }) {
   const [successMessage, setSuccessMessage] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
   const queryClient = useQueryClient();
+  // Fetch all comments related to the post
   const { data, isLoading, isError } = useQuery(
     ['comments', postId],
     () => postApi.getComments(postId),
@@ -38,7 +40,7 @@ export default function CommentSection({ postId }) {
     }
   );
 
-  // When adding a comment, invalidate the right querie
+  // Mutation to add a new comment
   const addCommentMutation = useMutation(
     (commentText) => postApi.createComment(postId, commentText),
     {
@@ -64,6 +66,7 @@ export default function CommentSection({ postId }) {
     }
   );
 
+  // Mutation to update a comment
   const updateCommentMutation = useMutation(
     ({ commentId, commentData }) => commentApi.updateComment(commentId, commentData),
     {
@@ -81,6 +84,7 @@ export default function CommentSection({ postId }) {
     }
   );
 
+  // Mutation to delete a comment
   const deleteCommentMutation = useMutation(
     (commentId) => commentApi.deleteComment(commentId),
     {
@@ -103,6 +107,7 @@ export default function CommentSection({ postId }) {
     }
   );
 
+  // Submit a new comment
   const handleSubmitComment = (e) => {
     e.preventDefault();
     if (commentText.trim()) {
@@ -111,6 +116,7 @@ export default function CommentSection({ postId }) {
     }
   };
 
+  // Submit edited comment
   const handleUpdateComment = () => {
     if (editText.trim()) {
       updateCommentMutation.mutate({
@@ -120,45 +126,54 @@ export default function CommentSection({ postId }) {
     }
   };
 
+  // Delete selected comment
   const handleDeleteComment = () => {
     if (selectedComment) {
       deleteCommentMutation.mutate(selectedComment.id);
     }
   };
 
+   // Open options menu for comment (edit/delete)
   const handleMenuOpen = (event, comment) => {
     setMenuAnchorEl(event.currentTarget);
     setSelectedComment(comment);
   };
 
+  // Close options menu
   const handleMenuClose = () => {
     setMenuAnchorEl(null);
     setSelectedComment(null);
   };
 
+  // Start editing a comment
   const startEditComment = (comment) => {
     setEditingComment(comment);
     setEditText(comment.content);
     handleMenuClose();
   };
 
+  // Cancel comment editing
   const cancelEditComment = () => {
     setEditingComment(null);
     setEditText('');
   };
 
+  // Close error alert
   const handleCloseError = () => {
     setShowError(false);
   };
 
+  // Close success alert
   const handleCloseSuccess = () => {
     setShowSuccess(false);
   };
 
+  // Navigate to user profile
   const handleUserProfileClick = (userId) => {
     navigate(`/profile/${userId}`);
   };
 
+  // Show loading spinner
   if (isLoading) {
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', p: 2 }}>
@@ -166,6 +181,8 @@ export default function CommentSection({ postId }) {
       </Box>
     );
   }
+
+  // Show error message if comment fetch fails
   if (isError) {
     return (
       <Box sx={{ p: 2 }}>
