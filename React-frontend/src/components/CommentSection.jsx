@@ -173,6 +173,7 @@ export default function CommentSection({ postId }) {
     navigate(`/profile/${userId}`);
   };
 
+  // Show loading spinner
   if (isLoading) {
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', p: 2 }}>
@@ -180,6 +181,8 @@ export default function CommentSection({ postId }) {
       </Box>
     );
   }
+
+  // Show error message if comment fetch fails
   if (isError) {
     return (
       <Box sx={{ p: 2 }}>
