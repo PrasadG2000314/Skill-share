@@ -17,7 +17,7 @@ import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { userApi } from '../services/api';
 import { getFullImageUrl } from '../utils/imageUtils';
 import { AuthContext } from '../contexts/AuthContext';
-
+// import { useSnackbar } from 'notistack';
 export default function FollowDialog({ open, onClose, userId, type, username }) {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();

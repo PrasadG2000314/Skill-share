@@ -8,7 +8,7 @@ const POPULAR_SKILLS = [
   'Programming', 'Design', 'Photography', 'Writing', 
   'Music', 'Cooking', 'Languages', 'Marketing'
 ];
-//   color="error"
+//   color="error" 
 export default function SkillsSidebar() {
   const { data: suggestedUsers } = useQuery(
     ['suggestedUsers'],
