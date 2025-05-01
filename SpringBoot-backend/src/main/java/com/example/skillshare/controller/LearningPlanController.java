@@ -47,6 +47,7 @@ public class   {
         return ResponseEntity.ok(learningPlanService.getLearningPlansByUserId(userId, pageable));
     }
 
+
     @PostMapping
     public ResponseEntity<LearningPlan> createLearningPlan(
             @AuthenticationPrincipal UserDetails currentUser,
@@ -55,7 +56,7 @@ public class   {
         LearningPlan learningPlan = learningPlanService.createLearningPlan(currentUser.getUsername(), learningPlanDto);
         return ResponseEntity.ok(learningPlan);
     }
-
+// updateLearningPlan
     @PutMapping("/{planId}")
     public ResponseEntity<LearningPlan> updateLearningPlan(
             @AuthenticationPrincipal UserDetails currentUser,
