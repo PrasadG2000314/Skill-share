@@ -8,7 +8,7 @@ const POPULAR_SKILLS = [
   'Programming', 'Design', 'Photography', 'Writing', 
   'Music', 'Cooking', 'Languages', 'Marketing'
 ];
-
+//   color="error"
 export default function SkillsSidebar() {
   const { data: suggestedUsers } = useQuery(
     ['suggestedUsers'],
@@ -41,7 +41,7 @@ export default function SkillsSidebar() {
           ))}
         </Box>
       </Paper>
-
+           //suggested users
       <Paper sx={{ p: 2 }}>
         <Typography variant="h6" gutterBottom>
           Suggested Users
