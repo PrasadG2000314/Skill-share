@@ -18,10 +18,10 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/learning-plans")
 @RequiredArgsConstructor
-public class LearningPlanController {
+public class   {
 
     private final LearningPlanService learningPlanService;
-
+//    private final LearningPlanRepository ;
     @GetMapping
     public ResponseEntity<Page<LearningPlan>> getCurrentUserLearningPlans(
             @AuthenticationPrincipal UserDetails currentUser,
@@ -47,6 +47,7 @@ public class LearningPlanController {
         return ResponseEntity.ok(learningPlanService.getLearningPlansByUserId(userId, pageable));
     }
 
+
     @PostMapping
     public ResponseEntity<LearningPlan> createLearningPlan(
             @AuthenticationPrincipal UserDetails currentUser,
@@ -55,7 +56,7 @@ public class LearningPlanController {
         LearningPlan learningPlan = learningPlanService.createLearningPlan(currentUser.getUsername(), learningPlanDto);
         return ResponseEntity.ok(learningPlan);
     }
-
+// updateLearningPlan
     @PutMapping("/{planId}")
     public ResponseEntity<LearningPlan> updateLearningPlan(
             @AuthenticationPrincipal UserDetails currentUser,
