@@ -218,7 +218,7 @@ export default function LearningPlanPage() {
           <Typography variant="h4" component="h1">
             {plan.title}
           </Typography>
-          
+          // Fix: Show edit and delete buttons only if the user is the owner of the plan
           {isOwner && (
             <Box>
               <Button
