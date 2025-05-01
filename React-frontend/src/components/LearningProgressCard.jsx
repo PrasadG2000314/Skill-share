@@ -15,7 +15,7 @@ import {
   Build as PracticeIcon,
   Bookmark as OtherIcon
 } from '@mui/icons-material';
-
+// import { useMutation, useQueryClient } from 'react-query';
 const getProgressTypeIcon = (type) => {
   switch (type) {
     case 'COURSE':
@@ -34,7 +34,7 @@ const getProgressTypeIcon = (type) => {
       return <OtherIcon fontSize="small" />;
   }
 };
-
+ // eslint-disable-next-line react/prop-types
 export default function LearningProgressCard({ progress, isOwner, onEdit, onDelete }) {
   const navigate = useNavigate();
 
