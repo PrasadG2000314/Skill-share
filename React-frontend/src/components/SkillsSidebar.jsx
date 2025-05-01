@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import { Link as RouterLink } from 'react-router-dom';
 import { userApi } from '../services/api';
 
+//sidebar component to show popular skills and suggested users
 const POPULAR_SKILLS = [
   'Programming', 'Design', 'Photography', 'Writing', 
   'Music', 'Cooking', 'Languages', 'Marketing'
