@@ -18,7 +18,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/learning-progress")
-@RequiredArgsConstructor
+@RequiredArgsConstructor // Automatically injects final fields via constructor
 public class LearningProgressController {
 
     private final LearningProgressService learningProgressService;

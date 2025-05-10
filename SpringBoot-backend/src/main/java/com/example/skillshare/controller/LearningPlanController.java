@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-@RestController
-@RequestMapping("/api/learning-plans")
-@RequiredArgsConstructor
+@RestController // Marks this class as a REST controller that handles HTTP requests
+@RequestMapping("/api/learning-plans") // Base URL for all endpoints in this controller
+@RequiredArgsConstructor // Automatically injects final fields via constructor
 public class LearningPlanController {
 
     private final LearningPlanService learningPlanService;
