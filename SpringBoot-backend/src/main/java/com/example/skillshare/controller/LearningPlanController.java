@@ -18,7 +18,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/learning-plans")
 @RequiredArgsConstructor
-public class   {
+public class LearningPlanController {
 
     private final LearningPlanService learningPlanService;
 //    private final LearningPlanRepository ;
