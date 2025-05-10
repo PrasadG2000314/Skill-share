@@ -36,7 +36,7 @@ export default function LearningPlanCard({ learningPlan, isOwner = false }) {
       }
     }
   );
-
+// Handle image loading error
   const handleMenuOpen = (event) => {
     setMenuAnchorEl(event.currentTarget);
   };
