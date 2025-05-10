@@ -63,7 +63,7 @@ public class PostController {
         enrichPostWithUserData(post);
         return ResponseEntity.ok(post);
     }
-
+    //get post
     @GetMapping("/user/{userId}")
     public ResponseEntity<Page<Post>> getPostsByUserId(
             @PathVariable String userId,
