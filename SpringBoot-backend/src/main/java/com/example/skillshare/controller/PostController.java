@@ -75,7 +75,7 @@ public class PostController {
         enrichPostsWithUserData(posts);
         return ResponseEntity.ok(posts);
     }
-
+    //create post
     @PostMapping
     public ResponseEntity<Post> createPost(
             @AuthenticationPrincipal UserDetails currentUser,
