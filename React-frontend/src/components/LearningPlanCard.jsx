@@ -141,7 +141,7 @@ export default function LearningPlanCard({ learningPlan, isOwner = false }) {
           )}
         </Box>
       </CardContent>
-      
+      {/* Displaying the image if available */}
       <CardActions sx={{ px: 2, pb: 2 }}>
         <Button 
           component={RouterLink} 
